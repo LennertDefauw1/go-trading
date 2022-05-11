@@ -3,11 +3,14 @@ package main
 import (
 	"fmt"
 
-	"github.com/LennertDefauw1/go-trading/config"
+	"github.com/LennertDefauw1/go-trading/src/config"
 )
 
 func main() {
+
 	fmt.Println("Hello, World!")
 
-	config := config.GetConfig()
+	config, _ := config.LoadConfig("./config")
+
+	fmt.Println(config.PrivateApiKey)
 }
